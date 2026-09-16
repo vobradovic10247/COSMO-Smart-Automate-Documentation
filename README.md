@@ -7,7 +7,7 @@ It supports:
 - Parent Rules that update parent work items when child work items change.
 - Sibling Rules that coordinate work items sharing the same parent.
 - Work Item Calculation Rules that calculate field values from fields and constants.
-- Rule Tester previews before changes are applied.
+- Parent Rule Tester previews parent state changes before they are applied.
 - Import and Export for moving rule sets between projects.
 - Presets for common Azure DevOps processes.
 
