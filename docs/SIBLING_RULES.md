@@ -313,13 +313,9 @@ Existing tags are kept, and the tag is only added if it is not already present.
 
 ## Testing Your Rules
 
-### Dry Run Test (Rule Tester)
+### Dry Run Test
 
-Before deploying a rule to your entire project:
-
-1. Open **Rule Tester** from the rule administration page or the work item toolbar.
-2. Select a work item to test.
-3. Review the sibling updates that would be made without changing any work items.
+Sibling Rules cannot be previewed. The **Parent Rule Tester** only simulates Parent Rules, so validate Sibling Rules on test work items.
 
 ### Real-World Testing
 
@@ -353,7 +349,7 @@ If a rule isn't working:
 - Parent/child hierarchy not set correctly
 
 **Solution:** 
-- Verify trigger filters with Rule Tester
+- Simplify the trigger filters and confirm the trigger work item matches them
 - Save state changes in Work Item Form or Backlog
 - Enable the rule in admin page
 - Confirm parent work item relationship exists
@@ -369,7 +365,7 @@ If a rule isn't working:
 - Sibling type mismatch
 
 **Solution:**
-- Use Rule Tester to see matching siblings
+- Check which siblings match the sibling filters by reviewing them in a query
 - Simplify filters to start (remove unnecessary conditions)
 - Check parent work item - siblings must share same parent
 - Verify Stack Rank order for "Next" mode
@@ -558,6 +554,6 @@ A: Yes, use the operation **Set tags (replaces all tags)** without selecting any
 
 1. **Read** [Parent Rules](./PARENT_RULES.md) for parent-rule documentation
 2. **Try** creating a simple test rule with test work items
-3. **Test** using the Rule Tester before enabling for your team
+3. **Test** on test work items before enabling for your team
 4. **Document** your rules and share configuration with the team
 5. **Monitor** work item history to verify rule execution

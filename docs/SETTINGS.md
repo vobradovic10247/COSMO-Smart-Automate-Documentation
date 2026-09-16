@@ -4,6 +4,9 @@ COSMO Smart Automate provides a set of settings and admin pages to control the r
 
 Related documentation:
 - [Parent Rules](./PARENT_RULES.md)
+- [Calculation Rules](./CALCULATION_RULES.md)
+- [Sibling Rules](./SIBLING_RULES.md)
+- [Import / Export](./IMPORT_EXPORT.md)
 - [Preset rules](./PRESETS.md)
 
 ## Administration Pages

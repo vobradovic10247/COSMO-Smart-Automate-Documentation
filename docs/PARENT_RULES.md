@@ -9,7 +9,7 @@ Parent Rules update the state or fields of a parent work item when one of its ch
 3. Select the child **Work item type**, its **Transition state**, and the parent **Parent type**.
 4. Optionally select states in **Parent not in state**, then select the **Parent target state**.
 5. Optionally add a **Field Setter** or enable **Children lookup**.
-6. Save the rule and use **Rule Tester** to preview the changes before using it in production.
+6. Save the rule and use the **Parent Rule Tester** to preview the parent state change before using it in production.
 
 Leave the parent state settings empty to create a field-only rule. The rule applies its configured parent field setters without changing the parent state.
 

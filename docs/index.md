@@ -14,6 +14,7 @@ COSMO Smart Automate is a rule-based extension for automating Azure DevOps work 
 - [Parent Rules Guide](./PARENT_RULES.md) - Create rules that update parent work items
 - [Calculation Rules Guide](./CALCULATION_RULES.md) - Calculate work item fields from fields and constants
 - [Sibling Rules Guide](./SIBLING_RULES.md) - Learn about coordinating related tasks
+- [Import / Export Guide](./IMPORT_EXPORT.md) - Move rule sets between projects with JSON bundles
 - [Settings](./SETTINGS.md) - Configure COSMO Smart Automate behavior
 - [Preset rules](./PRESETS.md) - Ready-to-use rule templates
 
@@ -36,20 +37,27 @@ Boards and query result views do not expose the contribution types required for 
 
 For details on how to configure Parent Rules, see [Parent Rules](./PARENT_RULES.md).
 
-## Testing Rules
+## Testing Parent Rules
 
-The Rule Tester allows you to perform a dry run of rules to see how it will update work items.
+The Parent Rule Tester performs a dry run of **Parent Rules** to show which parent work items would change state.
 
-You can find the rule tester in two places:
+You can find the Parent Rule Tester in two places:
 
-1. From the admin page. Here you can test rules for all work items.
+1. From the admin page. Here you can test Parent Rules for any work item.
 
    ![rule-tester-admin-page](./images/rule-tester-admin-page.png)
 
-2. From the individual work item. Here you can test rules for the current work item.
+2. From the individual work item. Here you can test Parent Rules for the current work item.
 
    ![rule-tester-work-item](./images/rule-tester-work-item.png)
 
-The rule tester will show all work items that will be changed.
+The Parent Rule Tester shows every parent work item that would change state. When no state change is predicted, it explains why, for example because the work item has no parent, because no enabled rule matched, or because children lookup blocked the transition.
 
 ![rule-tester-result](./images/rule-tester-result.png)
+
+### What the Parent Rule Tester does not cover
+
+- **Sibling Rules** and **Calculation Rules** are not simulated.
+- **Field Setters** are not previewed. A Parent Rule that only sets fields is reported as matching, but the field values it would write are not shown.
+- Azure DevOps process rules are not evaluated, so a previewed transition can still be rejected on save.
+- The preview is a snapshot. Concurrent edits between testing and saving can change the outcome.

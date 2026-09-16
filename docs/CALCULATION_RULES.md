@@ -39,7 +39,7 @@ Multiple filter conditions can be organized into logical groups. Use filters whe
 
 ## Execution and Testing
 
-Calculation Rules run when the configured work item event is processed. Use **Rule Tester** from the administration page or from an individual work item to preview the work items and changes before relying on a rule in production.
+Calculation Rules run when the configured work item event is processed. The **Parent Rule Tester** does not preview Calculation Rules, so validate a new calculation on a test work item before relying on it in production.
 
 Rules can be disabled without deleting them. Disabled rules remain available for editing and export but are not applied.
 
