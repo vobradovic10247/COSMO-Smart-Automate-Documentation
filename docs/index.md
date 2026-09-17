@@ -41,15 +41,9 @@ For details on how to configure Parent Rules, see [Parent Rules](./PARENT_RULES.
 
 The Parent Rule Tester performs a dry run of **Parent Rules** to show which parent work items would change state.
 
-You can find the Parent Rule Tester in two places:
-
-1. From the admin page. Here you can test Parent Rules for any work item.
+From the admin page, you can test Parent Rules for any work item.
 
    ![rule-tester-admin-page](./images/rule-tester-admin-page.png)
-
-2. From the individual work item. Here you can test Parent Rules for the current work item.
-
-   ![rule-tester-work-item](./images/rule-tester-work-item.png)
 
 The Parent Rule Tester shows every parent work item that would change state. When no state change is predicted, it explains why, for example because the work item has no parent, because no enabled rule matched, or because children lookup blocked the transition.
 

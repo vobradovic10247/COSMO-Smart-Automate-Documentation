@@ -8,8 +8,6 @@ Related documentation:
 
 Note: Azure DevOps process templates can evolve over time. Validate preset state names against the current process configuration in the target organization before rollout.
 
-![rule-presets](./images/preset-rules.png)
-
 ## Agile
 
 | Rule Name            | Work item type | Transition State | Parent Type | Parent State |
