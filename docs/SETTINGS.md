@@ -22,7 +22,7 @@ Access COSMO Smart Automate configuration through the project settings:
 
 ## Settings
 
-> Only use work item types defined in this projects process
+> **Use scoped work item types:** Show only work item types defined in the current project's process.
 
 This controls what work item types are shown in the dropdowns while configuring rules. It only controls the UI and not any functionality.
 

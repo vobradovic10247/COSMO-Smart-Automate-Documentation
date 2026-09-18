@@ -35,7 +35,11 @@ Boards and query result views do not expose the contribution types required for 
 
 ## Rules
 
-For details on how to configure Parent Rules, see [Parent Rules](./PARENT_RULES.md).
+For details on how to configure the supported rule types, see:
+
+- [Parent Rules](./PARENT_RULES.md) - Update parent work items when child work items change
+- [Sibling Rules](./SIBLING_RULES.md) - Coordinate state or field updates between related work items
+- [Calculation Rules](./CALCULATION_RULES.md) - Calculate work item fields from fields and constants
 
 ## Testing Parent Rules
 

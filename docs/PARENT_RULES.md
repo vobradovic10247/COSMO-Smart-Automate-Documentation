@@ -9,9 +9,29 @@ Parent Rules update the state or fields of a parent work item when one of its ch
 3. Select the child **Work item type**, its **Transition state**, and the parent **Parent type**.
 4. Optionally select states in **Parent not in state**, then select the **Parent target state**.
 5. Optionally add a **Field Setter** or enable **Children lookup**.
-6. Save the rule and use the **Parent Rule Tester** to preview the parent state change before using it in production.
+6. Save the rule. For state-changing rules, use the **Parent Rule Tester** to preview the parent state change before using it in production.
 
 Leave the parent state settings empty to create a field-only rule. The rule applies its configured parent field setters without changing the parent state.
+
+Use the **Rule enabled** toggle to disable a rule temporarily without deleting it. Disabled rules remain saved for editing and export but are skipped during processing.
+
+## Field-Only Parent Rule Example
+
+Use a field-only Parent Rule when a child transition should update a field on the parent without changing the parent's state.
+
+**Scenario:** When a `Task` changes to `Closed`, mark its `User Story` for review while leaving the User Story state unchanged.
+
+| Field               | Value |
+| ------------------- | ----- |
+| Work item type      | `Task` |
+| Parent type         | `User Story` |
+| Transition state    | `Closed` |
+| Parent not in state | Leave empty |
+| Parent target state | Leave empty |
+| Field Setter        | Set the parent's `Custom.WorkflowStatus` field to `Ready for review` |
+| Children lookup     | Off |
+
+When the task closes, the User Story keeps its current state and only `Custom.WorkflowStatus` is updated. Replace `Custom.WorkflowStatus` with a field available in your process. The Parent Rule Tester can report that the rule matches, but it does not preview the field value that will be written.
 
 ## Parent Rule Fields
 
@@ -79,7 +99,7 @@ Take the following rule:
 
 When setting `Documentation (8)` to `Closed`, it will update `User Story (6)` to `Closed`.
 
-If `Children lookup` was set to `True` for this rule, it would check all other child work items of `User Story (8)` where the target state is the same as the one defined for this rule. Since this parent has two different types of child items (`Documentation` and `Task`) a rule would need to be defined for both of them.
+If `Children lookup` was set to `True` for this rule, it would check all other child work items of `User Story (6)` where the target state is the same as the one defined for this rule. Since this parent has two different types of child items (`Documentation` and `Task`) a rule would need to be defined for both of them.
 
 ### Example Three - Activating the Parent
 

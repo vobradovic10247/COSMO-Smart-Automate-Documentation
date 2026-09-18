@@ -94,6 +94,8 @@ When creating a Sibling Rule, you'll configure:
 
 The trigger state, sibling type, and mode are required. Target and excluded states are optional. Leave **Target State** empty when the rule should only update fields through the **Field Setter**.
 
+Use the **Rule enabled** toggle to disable a rule temporarily without deleting it. Disabled rules remain saved for editing and export but are skipped during processing.
+
 ### Step 3: Create Your First Rule
 
 **Simple Example:** Update the next task when current task closes
@@ -123,6 +125,21 @@ The trigger state, sibling type, and mode are required. Target and excluded stat
 - Update only the FIRST one (Next mode, by Stack Rank + ID)
 - Set it to "Ready"
 - Preserve its current assignee
+
+---
+
+### Field-Only Example: Tag the Next Sibling Without Changing Its State
+
+Use an empty **Sibling target state** when the rule should update a field but leave the matching sibling's state unchanged.
+
+**Configuration:**
+- Trigger when: Task transitions to `Closed` (with tag `APPROVAL`)
+- Update: Next Task (with tag `BLOCKED`)
+- Sibling target state: Leave empty
+- Mode: `Next`
+- Field Setter: Tags -> Operation `Add tags` -> `READY_FOR_REVIEW`
+
+**Result:** The next matching sibling keeps its current state and receives the `READY_FOR_REVIEW` tag. No state transition is sent for that sibling.
 
 ---
 
@@ -223,9 +240,9 @@ Tag = "DEV" AND Custom Field "Status" = "Ready"
 
 ### How Filters Work
 
-- **Multiple filters with AND:** All conditions must be true
-- **Multiple filters with OR:** At least one condition must be true
-- **Logical groups:** Combine AND/OR for complex logic
+- **Within a filter group:** All configured conditions must be true (AND).
+- **Across filter groups:** At least one complete group must match (OR).
+- **Use separate groups** to express alternatives, then combine conditions within each group for more specific matching.
 
 Example: `(Tag = "DEV" OR Tag = "TESTING") AND Custom Status = "New"`
 - Must have either DEV or TESTING tag
@@ -500,11 +517,12 @@ Keep assignee: Off
 3. Filter by "COSMO Smart Automate" or "SiblingRule"
 4. Look for error messages
 
-### Enable Detailed Logging
+### Review Rule Execution
 
-In the project's COSMO Smart Automate settings:
-- Enable "Debug Mode" (if available)
-- Check work item update history for rule execution notes
+There is no separate in-app logging toggle. To inspect rule errors:
+- Open browser Developer Tools (F12) and select the **Console** tab
+- Filter by "COSMO Smart Automate" or "SiblingRule"
+- Check work item update history for rule execution details
 
 ### Contact Support
 
