@@ -47,7 +47,7 @@ All four tasks are siblings because they share the same parent (Feature).
 
 **Configuration:**
 - Trigger when: Task transitions to `Closed` (with tag "APPROVAL")
-- Update: All Tasks (with tag "BLOCKED")  
+- Update: All Tasks (with tag "BLOCKED")
 - To state: `Ready`
 - Mode: `All` (all matching tasks)
 - **Field Setter:** Tags → Operation `Remove tags` → `BLOCKED`
@@ -170,7 +170,7 @@ Updates **only the next sibling** in sequence (sorted by Stack Rank, then work i
 
 **Use when:**
 - Work items must be done in a specific order
-- Only one task should be active at a time  
+- Only one task should be active at a time
 - Sequential hand-offs between team members
 - Queue-based workflows
 
@@ -365,7 +365,7 @@ If a rule isn't working:
 - Rule disabled in admin page
 - Parent/child hierarchy not set correctly
 
-**Solution:** 
+**Solution:**
 - Simplify the trigger filters and confirm the trigger work item matches them
 - Save state changes in Work Item Form or Backlog
 - Enable the rule in admin page
@@ -452,7 +452,7 @@ Update: All Task (tag = "QA", state = "New")
 To: "Ready"
 Mode: All
 Keep assignee: Off
-Field Setter: 
+Field Setter:
   - Remove "QA" tag from Tags field (if you prefer)
   - OR set Tags = "QA;ACTIVE" (add workflow tag)
 ```
