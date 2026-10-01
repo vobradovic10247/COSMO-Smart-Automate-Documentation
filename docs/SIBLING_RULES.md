@@ -328,6 +328,25 @@ Existing tags are kept, and the tag is only added if it is not already present.
 
 ---
 
+## Managing Sibling Rules
+
+Each rule has an actions menu (**⋮**) to edit, enable or disable, or delete a single rule.
+
+To change several rules at once:
+
+1. Select the rules with the checkboxes in the rule list. The checkbox in the table header selects all Sibling Rules. `Ctrl` + click and `Shift` + click also work.
+2. Use the action bar above the list:
+   - **Enable** / **Disable** changes only the selected rules that are not already in that state. The action is unavailable when no selected rule needs the change.
+   - **Delete** asks for confirmation and then removes the selected rules. Deleted rules cannot be restored.
+   - **Clear selection** deselects all rules.
+3. A notification confirms the result, for example `Enabled 3 rules`.
+
+To remove all Sibling Rules, select all rules with the header checkbox and choose **Delete**.
+
+If a change cannot be saved, the changes already saved by that action are reverted, an error notification is shown, and the list is reloaded. Bulk actions only affect Sibling Rules.
+
+---
+
 ## Testing Your Rules
 
 ### Dry Run Test

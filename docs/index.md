@@ -41,6 +41,8 @@ For details on how to configure the supported rule types, see:
 - [Sibling Rules](./SIBLING_RULES.md) - Coordinate state or field updates between related work items
 - [Calculation Rules](./CALCULATION_RULES.md) - Calculate work item fields from fields and constants
 
+Every rule list supports selecting multiple rules to enable, disable, or delete them in one step. See the *Managing* section of each rule guide.
+
 ## Testing Parent Rules
 
 The Parent Rule Tester performs a dry run of **Parent Rules** to show which parent work items would change state.

@@ -75,6 +75,23 @@ The **Parent Rule Tester** does not preview Calculation Rules, so validate a new
 
 Rules can be disabled without deleting them. Disabled rules remain available for editing and export but are not applied.
 
+## Managing Calculation Rules
+
+Each rule has an actions menu (**⋮**) to edit, enable or disable, or delete a single rule.
+
+To change several rules at once:
+
+1. Select the rules with the checkboxes in the rule list. The checkbox in the table header selects all Work Item Calculation Rules. `Ctrl` + click and `Shift` + click also work.
+2. Use the action bar above the list:
+   - **Enable** / **Disable** changes only the selected rules that are not already in that state. The action is unavailable when no selected rule needs the change.
+   - **Delete** asks for confirmation and then removes the selected rules. Deleted rules cannot be restored.
+   - **Clear selection** deselects all rules.
+3. A notification confirms the result, for example `Deleted 2 rules`.
+
+To remove all Work Item Calculation Rules, select all rules with the header checkbox and choose **Delete**. Fields that are only used by deleted rules no longer trigger calculations.
+
+If a change cannot be saved, the changes already saved by that action are reverted, an error notification is shown, and the list is reloaded. Bulk actions only affect Work Item Calculation Rules.
+
 ## Import and Export
 
 Calculation Rules can be included in the **Import / Export** project-settings page. Exported bundles may contain Parent Rules, Work Item Calculation Rules, and Sibling Rules. Importing an equivalent calculation rule skips it as a duplicate, even if the imported rule has a different generated ID.

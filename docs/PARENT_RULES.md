@@ -176,9 +176,22 @@ We will end up with the following states after `Task` is set to `Active` and pro
 
 ## Managing Parent Rules
 
-The **Clear all rules** action asks for confirmation before removing all Parent Rules in the current project. It does not remove Work Item Calculation Rules or Sibling Rules.
+Each rule has an actions menu (**⋮**) to edit, enable or disable, or delete a single rule.
 
-Equivalent Parent Rule configurations cannot be created more than once. This duplicate check ignores the generated rule ID, so copying or importing an equivalent rule skips it.
+To change several rules at once:
+
+1. Select the rules with the checkboxes in the rule list. The checkbox in the table header selects all Parent Rules, and the checkbox in a work item type group header selects all rules of that type. `Ctrl` + click and `Shift` + click also work.
+2. Use the action bar above the list:
+   - **Enable** / **Disable** changes only the selected rules that are not already in that state. The action is unavailable when no selected rule needs the change.
+   - **Delete** asks for confirmation and then removes the selected rules. Deleted rules cannot be restored.
+   - **Clear selection** deselects all rules.
+3. A notification confirms the result, for example `Disabled 4 rules`.
+
+To remove all Parent Rules, select all rules with the header checkbox and choose **Delete**.
+
+If a change cannot be saved, the changes already saved by that action are reverted, an error notification is shown, and the list is reloaded. Bulk actions only affect Parent Rules; Work Item Calculation Rules and Sibling Rules are not changed.
+
+Equivalent Parent Rule configurations cannot be created more than once. This duplicate check ignores the generated rule ID, so importing an equivalent rule skips it.
 
 ## Import and Export
 
